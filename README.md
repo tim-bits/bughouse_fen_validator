@@ -8,7 +8,7 @@ At the same time, this validator does go beyound typical pure regex validation.
 
 # Utility
 
-Written in both js and java, it can be used both on html/js front end and java back end. That's actually how I use it in my Springboot app, and that was essentially a motivation behind creating it.
+Written in both js and java, it can be used both on html/js front end and java back end of the same application.
 
 
 # Installation
@@ -28,24 +28,25 @@ Run `mvn clean install` and add the following to your application pom, if you ar
 			<version>1.0</version>
 		</dependency>
 
-For gradle, it should be
-`compile 'org.bughouse.fen:bughouse-fen-validator:1.0'`
-but I haven't tried myself.
+For gradle, it should be <br/>
+`compile 'org.bughouse.fen:bughouse-fen-validator:1.0'` , <br/>
+although I haven't tried it myself.
 
 # Usage
 
 ### html
-add a reference to the script file:
+add a reference to chess.js in your html file:
 
 	     <script src="js/chess.js"></script>
 
 ### js
-call validateFen() with your FEN string, and then depending on the value of `valid` property of the returned object, either do error handling (e.g. display the error via `error` property) or continue with execution.
+call validateFen() with your FEN string, and then depending on the value of `valid` property of the returned object, either do error handling (e.g. display the error using `error` property) or continue with happy path screnario.
 
             const err = validateFen(fen);  
             if (!err.valid) {
             	// error handling e.g.
                 // alert(err.error);
+                // return;
             } 
 
 
@@ -64,12 +65,17 @@ add the following in your application code e.g. before sending a FEN to a chess 
 
 ### command line
 
-	   To check individual FENs in command prompt, replace the FEN value in the line below in pom.xml with yours and execute `mvn exec:java`
+	   To check individual FENs in command prompt, replace the prepopulated FEN value in the line below in your pom.xml with yours and execute mvn exec:java
 
     	<argument>KrkR4/8/8/8/8/8/8/8 w - - 0 1</argument>     
 
 
 # Credits
 
-The bughouse FEN validator is reusing regex validation logic of [chess.js](https://github.com/jhlywa/chess.js), plus additing extra validation rules on top of it.
-The java layer is implemented using nashorn [js-to-java engine](https://github.com/openjdk/nashorn)
+The bughouse FEN validator is reusing regex validation logic of [chess.js](https://github.com/jhlywa/chess.js), plus additing extra validation rules on top of it. <br/> The java layer is implemented using [Nashorn JavaScript engine for Java](https://github.com/openjdk/nashorn)
+
+
+# License
+
+[GNU General Public License V3](https://www.gnu.org/licenses/gpl-3.0.en.html) except for chess.js which has its on license in the comments of the file header
+
