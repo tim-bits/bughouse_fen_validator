@@ -4,6 +4,9 @@
 name: Maven Package
 
 on:
+  push:
+    branches:
+      - master
   workflow_dispatch:
   release:
     types: [created]
@@ -31,6 +34,6 @@ jobs:
 
     - name: Publish to GitHub Packages Apache Maven
 #      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
-      run: mvn deploy -DaltDeploymentRepository=GitHubPackages::default::https://maven.pkg.github.com/tim-bits/bughouse-fen-validator  -s $GITHUB_WORKSPACE/settings.xml
+      run: mvn -X deploy -DaltDeploymentRepository=GitHubPackages::default::https://maven.pkg.github.com/tim-bits/bughouse-fen-validator  -s $GITHUB_WORKSPACE/settings.xml
       env:
         GITHUB_TOKEN: ${{ github.token }}
