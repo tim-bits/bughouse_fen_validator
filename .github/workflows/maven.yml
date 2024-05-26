@@ -37,4 +37,5 @@ jobs:
 #      run: mvn -X deploy -DaltDeploymentRepository=GitHubPackages::default::https://maven.pkg.github.com/tim-bits/bughouse-fen-validator  -s $GITHUB_WORKSPACE/settings.xml
       run: mvn --batch-mode deploy
       env:
-        GITHUB_TOKEN: ${{ github.token }}
+#        GITHUB_TOKEN: ${{ github.token }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
