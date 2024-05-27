@@ -32,13 +32,22 @@
 
     </dependencies>
 
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/tim-bits/bughouse-fen-validator</url>
-        </repository>
-    </distributionManagement>
+<!--    <distributionManagement>-->
+<!--        <repository>-->
+<!--            <id>github</id>-->
+<!--            <name>GitHub Packages</name>-->
+<!--            <url>https://maven.pkg.github.com/tim-bits/bughouse-fen-validator</url>-->
+<!--        </repository>-->
+<!--    </distributionManagement>-->
+
+<!--    <distributionManagement>-->
+<!--        <repository>-->
+<!--            <id>internal.repo</id>-->
+<!--            <name>Github Repo</name>-->
+<!--            <url>file:///home/tim/workplace/bughouse_fen_validator</url>-->
+<!--        </repository>-->
+<!--    </distributionManagement>-->
+
 
     <build>
         <plugins>
@@ -76,6 +85,16 @@
                     </arguments>
                 </configuration>
             </plugin>
+
+
+<!--            <plugin>-->
+<!--                <artifactId>maven-deploy-plugin</artifactId>-->
+<!--                <version>2.8.1</version>-->
+<!--                <configuration>-->
+<!--                    <altDeploymentRepository>internal.repo::default::file:///home/tim/workplace/bughouse_fen_validator</altDeploymentRepository>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+
 
         </plugins>
     </build>
