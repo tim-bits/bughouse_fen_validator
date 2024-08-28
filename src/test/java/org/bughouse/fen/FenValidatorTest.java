@@ -57,6 +57,27 @@ public class FenValidatorTest {
         assertEquals(returnCode.getCode(), 0);
     }
 
+    @Test
+    public void sideInCheckMustMove() {
+        FenValidator validator = FenValidator.getInstance();
+        ReturnCode returnCode = validator.validate("8/1k6/8/1Q6/8/1K6/8/8 w - - 0 1");
+        assertEquals(returnCode.getCode(), 16);
+    }
+
+    @Test
+    public void tripleAndMoreChecks() {
+        FenValidator validator = FenValidator.getInstance();
+        ReturnCode returnCode = validator.validate("kQ6/QQ6/K7/8/8/8/8/8 b - - 0 1");
+        assertEquals(returnCode.getCode(), 17);
+    }
+
+    @Test
+    public void invalidDiscoveredCheck() {
+        FenValidator validator = FenValidator.getInstance();
+        ReturnCode returnCode = validator.validate("k3R3/8/8/Q7/K7/8/8/8 b - - 0 1");
+        assertEquals(returnCode.getCode(), 18);
+    }
+
 }
 
 
