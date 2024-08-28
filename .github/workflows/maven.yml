@@ -18,7 +18,7 @@ jobs:
     permissions:
       contents: read
       packages: write
-#      deployments: write
+      deployments: write
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 17
@@ -42,5 +42,6 @@ jobs:
       run: mvn -X --batch-mode deploy
       env:
 ##        GITHUB_TOKEN: ${{ github.token }}
-#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GITHUB_TOKEN: ${{ secrets.PUBLISHING_SECRET }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        GITHUB_TOKEN: ${{ secrets.PUBLISHING_SECRET }}
+#        GITHUB_TOKEN: $secret
