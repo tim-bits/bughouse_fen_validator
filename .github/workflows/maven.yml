@@ -28,6 +28,6 @@ jobs:
         distribution: 'temurin'
 
     - name: Publish to GitHub Packages Apache Maven
-      run: mvn -X --batch-mode package deploy
+      run: mvn -X --batch-mode deploy
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
