@@ -25,7 +25,7 @@ jobs:
       with:
         package-version-ids: '1.0'
         package-name: 'bughouse-fen-validator'
-        package-type: 'npm'
+        package-type: 'maven'
     
     - uses: actions/checkout@v4
     - name: Set up JDK 17
