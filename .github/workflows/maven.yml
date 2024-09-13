@@ -24,7 +24,7 @@ jobs:
     - uses: actions/delete-package-versions@v5
       with:
         # package-version-ids: '1.0'
-        package-name: 'bughouse-fen-validator'
+        package-name: 'bughouse_fen_validator'
         package-type: 'maven'
         min-versions-to-keep: 10
     
