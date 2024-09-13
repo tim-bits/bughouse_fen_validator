@@ -23,9 +23,10 @@ jobs:
 
     - uses: actions/delete-package-versions@v5
       with:
-        package-version-ids: '1.0'
+        # package-version-ids: '1.0'
         package-name: 'bughouse-fen-validator'
         package-type: 'maven'
+        min-versions-to-keep: 10
     
     - uses: actions/checkout@v4
     - name: Set up JDK 17
